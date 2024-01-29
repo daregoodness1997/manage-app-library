@@ -1,13 +1,18 @@
 import React, { FC } from "react";
-import "./Button.scss";
-import { Button as CButton } from "@carbon/react";
+
+import "./styles.scss";
 
 export interface ButtonProps {
   label: string;
+  primary?: boolean;
+  backgroundColor?: string;
+  size?: "small" | "medium" | "large";
+
+  onClick?: () => void;
 }
 
 const Button: FC<ButtonProps> = ({ label }) => {
-  return <CButton>{label}</CButton>;
+  return <button className={"button"}>{label}</button>;
 };
 
 export default Button;

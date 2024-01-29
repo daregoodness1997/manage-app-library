@@ -7,7 +7,7 @@ export interface ButtonProps {
 }
 
 export default {
-  title: "Example/Button",
+  title: "Components/Button",
   component: Button,
   argTypes: {
     backgroundColor: { control: "color" },
