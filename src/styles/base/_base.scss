@@ -1,0 +1,18 @@
+@import 'styles/abstracts';
+
+html {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+
+  @include hidden-scroll();
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

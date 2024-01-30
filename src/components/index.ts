@@ -1,4 +1,6 @@
 import "./styles.scss";
+import Button from "./Button";
+import Navbar from "./Navbar";
+import Input from "./Input";
 
-export { default as Button } from "./Button";
-export { default as Navbar } from "./Navbar";
+export { Button, Navbar };

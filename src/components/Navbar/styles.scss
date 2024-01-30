@@ -1,8 +1,10 @@
+@import "../../styles/abstracts";
+
 .navbar {
-  background-color: #2a82e6;
-  color: #fff;
+  background-color: $clr-blue;
+  color: $clr-white;
   padding: 20px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

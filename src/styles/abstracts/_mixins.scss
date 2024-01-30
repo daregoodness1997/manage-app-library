@@ -1,0 +1,66 @@
+@use 'variables';
+
+/// Event wrapper
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+@mixin font(
+  $color: variables.$clr-black,
+  $size: null,
+  $weight: null,
+  $line-height: normal,
+  $style: normal,
+  $letter-spacing: null
+) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  font-style: $style;
+  color: $color;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin press-button-effect($scale: 1.01) {
+  transition: transform 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+
+  &:not([disabled]) {
+    &:active {
+      transform: scale($scale);
+      transition: 0.1s;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
