@@ -1,1 +1,1 @@
-Octocare Demo UI Library
+DUI Library
