@@ -26,7 +26,7 @@ const config = {
     alias: {
       react: path.resolve(__dirname, "./node_modules/react"),
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
-      // "@carbon/react": path.resolve(__dirname, "./node_modules/@carbon/react"),
+      "@carbon/react": path.resolve(__dirname, "./node_modules/@carbon/react"),
     },
     extensions: [".ts", ".tsx", ".js", ".jsx"],
   },

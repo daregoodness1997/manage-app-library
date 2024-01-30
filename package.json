@@ -1,14 +1,14 @@
 {
-  "name": "@daregoodness/demoui",
-  "version": "1.0.2",
-  "description": "A demo UI React Component Library ",
+  "name": "@daregoodness/dui",
+  "version": "1.0.1",
+  "private": false,
+  "description": "A demo UI React Component Library using Carbon Design System ",
   "scripts": {
-    "rollup": "rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "dev": "rollup -c -w",
-    "build": "webpack --mode development"
+    "build": "webpack --mode production "
   },
   "author": "Dare Goodness",
   "license": "ISC",
@@ -57,9 +57,7 @@
   "dependencies": {
     "@carbon/react": "^1.48.1"
   },
-  "main": "dist/cjs/bundle.js",
-  "module": "dist/esm/bundle.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ]
