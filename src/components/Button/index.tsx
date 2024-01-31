@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { Button as CarbonButton } from "@carbon/react";
 
 import "./styles.scss";
@@ -10,8 +10,12 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ label }) => {
-  return <CarbonButton className={"CarbonButton"}>{label}</CarbonButton>;
+const Button: FC<ButtonProps> = ({ label, onClick }) => {
+  return (
+    <CarbonButton className={"CarbonButton"} onClick={onClick}>
+      {label}
+    </CarbonButton>
+  );
 };
 
-export default Button;
+export default memo(Button);

@@ -9,9 +9,7 @@ export interface ButtonProps {
 export default {
   title: "Components/Button",
   component: Button,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  argTypes: {},
 } as Meta<typeof Button>;
 
 const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />;
