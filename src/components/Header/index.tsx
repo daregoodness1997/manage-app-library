@@ -1,29 +1,29 @@
-import React, { FC, memo, useState } from "react";
+import React, { FC, memo } from "react";
 import {
   Header as CarbonHeader,
+  Dropdown,
   HeaderMenuButton,
   HeaderName,
-  SideNav,
-  SideNavItems,
-  SideNavLink,
-  SideNavMenu,
-  SideNavMenuItem,
+  Select,
+  SelectItem,
   SkipToContent,
 } from "@carbon/react";
-import { Fade } from "@carbon/icons-react";
 
 export interface Props {
   orgName: string;
   className?: string;
+  isSideNavExpanded?: boolean;
+  onClickSideNavExpand?: (e?: any) => void;
+  handleAppChange?: (e?: any) => void;
 }
 
-const Header: FC<Props> = ({ orgName, className }) => {
-  const [isSideNavExpanded, setIsSideNavExpanded] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  const onClickSideNavExpand = () => {
-    setIsSideNavExpanded(!isSideNavExpanded);
-  };
+const Header: FC<Props> = ({
+  orgName,
+  className,
+  isSideNavExpanded,
+  onClickSideNavExpand,
+  handleAppChange,
+}) => {
   return (
     <CarbonHeader aria-label="Dashboard Platform Name" className={className}>
       <SkipToContent />
@@ -33,36 +33,28 @@ const Header: FC<Props> = ({ orgName, className }) => {
         isActive={isSideNavExpanded}
         aria-expanded={isSideNavExpanded}
       />
-      <HeaderName href="#" prefix="Template" className={"header-name"}>
+      <HeaderName
+        href="#"
+        prefix="Template"
+        className={"header-name"}
+        style={{ background: "#00539a", color: "#fff" }}
+      >
         [{orgName}]
       </HeaderName>
-      <SideNav
-        aria-label="Side navigation"
-        expanded={isSideNavExpanded}
-        onSideNavBlur={onClickSideNavExpand}
-        href="#main-content"
-        placeholder={"Side navigation"}
+
+      <Select
+        id="modules"
+        inline
+        labelText="Modules"
+        defaultValue={"CRM"}
+        placeholder={"Select a module"}
+        onChange={handleAppChange}
       >
-        <SideNavItems>
-          <SideNavMenu renderIcon={Fade} title="Category title">
-            <SideNavMenuItem>Link</SideNavMenuItem>
-            <SideNavMenuItem>Link</SideNavMenuItem>
-            <SideNavMenuItem>Link</SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavMenu renderIcon={Fade} title="Category title" isActive={true}>
-            <SideNavMenuItem>Link</SideNavMenuItem>
-            <SideNavMenuItem aria-current="page">Link</SideNavMenuItem>
-            <SideNavMenuItem>Link</SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavMenu renderIcon={Fade} title="Category title">
-            <SideNavMenuItem>Link</SideNavMenuItem>
-            <SideNavMenuItem>Link</SideNavMenuItem>
-            <SideNavMenuItem>Link</SideNavMenuItem>
-          </SideNavMenu>
-          <SideNavLink renderIcon={Fade}>Link</SideNavLink>
-          <SideNavLink renderIcon={Fade}>Link</SideNavLink>
-        </SideNavItems>
-      </SideNav>{" "}
+        <SelectItem value="CRM" text="CRM" />
+        <SelectItem value="Admin" text="Admin" />
+        <SelectItem value="EMR" text="EMR" />
+        <SelectItem value="Employee" text="Employee" />
+      </Select>
     </CarbonHeader>
   );
 };

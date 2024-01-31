@@ -1,7 +1,8 @@
 import "./styles.scss";
 import Button from "./Button";
-import Navbar from "./Navbar";
 import Input from "./Input";
 import Header from "./Header";
+import SideNavbar from "./SideNavbar";
+import Content from "./Content";
 
-export { Button, Navbar, Input, Header };
+export { Button, Input, Header, SideNavbar, Content };

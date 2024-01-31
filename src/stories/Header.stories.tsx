@@ -9,9 +9,7 @@ export interface Props {
 export default {
   title: "Components/Header",
   component: Header,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  argTypes: {},
 } as Meta<typeof Header>;
 
 const Template: StoryFn<Props> = (args) => <Header {...args} />;

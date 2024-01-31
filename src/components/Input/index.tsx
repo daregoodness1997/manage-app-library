@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 
 import { NumberInput, TextInput } from "@carbon/react";
 
 interface Props {
   id: string;
   labelText: string;
-  type?: "text" | "number";
+  type?: "text" | "number" | "password";
 }
 
 const Input: FC<Props> = ({ id, labelText, type = "text" }) => {
@@ -19,4 +19,4 @@ const Input: FC<Props> = ({ id, labelText, type = "text" }) => {
   }
 };
 
-export default Input;
+export default memo(Input);

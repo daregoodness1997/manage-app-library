@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { Button as CarbonButton } from "@carbon/react";
 
 import "./styles.scss";
@@ -14,4 +14,4 @@ const Button: FC<ButtonProps> = ({ label }) => {
   return <CarbonButton className={"CarbonButton"}>{label}</CarbonButton>;
 };
 
-export default Button;
+export default memo(Button);

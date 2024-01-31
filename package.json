@@ -1,6 +1,6 @@
 {
   "name": "@daregoodness/dui",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "private": false,
   "description": "A demo UI React Component Library using Carbon Design System ",
   "scripts": {
@@ -55,7 +55,9 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@carbon/react": "^1.48.1"
+    "@carbon/icons-react": "^11.34.1",
+    "@carbon/react": "^1.48.1",
+    "classnames": "^2.5.1"
   },
   "main": "dist/index.js",
   "files": [
