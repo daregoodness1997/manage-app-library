@@ -1,4 +1,5 @@
 import React, { FC, memo } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { Content, Header, SideNavbar } from "../../components";
 
@@ -11,9 +12,11 @@ export interface Props {
 const DashboardLayout: FC<Props> = ({ orgName, handleAppChange, children }) => {
   return (
     <div>
-      <Header orgName={orgName} handleAppChange={handleAppChange} />
-      <SideNavbar />
-      <Content children={children} />
+      <Router>
+        <Header orgName={orgName} handleAppChange={handleAppChange} />
+        <SideNavbar />
+        <Content children={children} />
+      </Router>
     </div>
   );
 };

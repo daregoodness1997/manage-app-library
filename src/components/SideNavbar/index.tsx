@@ -1,12 +1,7 @@
 import React, { FC, memo } from "react";
 import { Fade } from "@carbon/icons-react";
-import {
-  SideNav,
-  SideNavItems,
-  SideNavLink,
-  SideNavMenu,
-  SideNavMenuItem,
-} from "@carbon/react";
+import { SideNav, SideNavItems, SideNavLink, SideNavMenu, SideNavMenuItem } from "@carbon/react";
+import { Link } from "react-router-dom";
 
 export interface Props {
   items?: [];
@@ -14,11 +9,7 @@ export interface Props {
   onClickSideNavExpand?: (e?: any) => void;
 }
 
-const SideNavbar: FC<Props> = ({
-  items,
-  isSideNavExpanded,
-  onClickSideNavExpand,
-}) => {
+const SideNavbar: FC<Props> = ({ items, isSideNavExpanded, onClickSideNavExpand }) => {
   return (
     <SideNav
       aria-label="Side navigation"
@@ -43,7 +34,12 @@ const SideNavbar: FC<Props> = ({
           <SideNavMenuItem>Link</SideNavMenuItem>
           <SideNavMenuItem>Link</SideNavMenuItem>
         </SideNavMenu>
-        <SideNavLink renderIcon={Fade}>Link</SideNavLink>
+        <SideNavLink renderIcon={Fade}>
+          {/* <a href="/profile">Profile</a> */}
+          <Link to="/profile" style={{ textDecoration: "none", color: "#606060" }}>
+            Profile
+          </Link>
+        </SideNavLink>
         <SideNavLink renderIcon={Fade}>Link</SideNavLink>
       </SideNavItems>
     </SideNav>
