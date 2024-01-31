@@ -10,8 +10,12 @@ export interface ButtonProps {
   onClick?: () => void;
 }
 
-const Button: FC<ButtonProps> = ({ label }) => {
-  return <CarbonButton className={"CarbonButton"}>{label}</CarbonButton>;
+const Button: FC<ButtonProps> = ({ label, onClick }) => {
+  return (
+    <CarbonButton className={"CarbonButton"} onClick={onClick}>
+      {label}
+    </CarbonButton>
+  );
 };
 
 export default memo(Button);

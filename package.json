@@ -1,6 +1,6 @@
 {
   "name": "@daregoodness/dui",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "private": false,
   "description": "A demo UI React Component Library using Carbon Design System ",
   "scripts": {

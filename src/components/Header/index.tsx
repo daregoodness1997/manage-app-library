@@ -33,12 +33,7 @@ const Header: FC<Props> = ({
         isActive={isSideNavExpanded}
         aria-expanded={isSideNavExpanded}
       />
-      <HeaderName
-        href="#"
-        prefix="Template"
-        className={"header-name"}
-        style={{ background: "#00539a", color: "#fff" }}
-      >
+      <HeaderName href="#" prefix="Template" className={"header-name"}>
         [{orgName}]
       </HeaderName>
 

@@ -17,4 +17,7 @@ export default {
 const Template: StoryFn<Props> = (args) => <AuthLayout {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  title: "Login",
+  subTitle: "Enter your email and password below",
+};
